@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import detailsImg from '@/assets/images/details.png';
+import dressImg from '@/assets/images/dress.png';
 
 const EventDetailsSection = () => {
   const { t, lang } = useLanguage();
@@ -24,7 +26,7 @@ const EventDetailsSection = () => {
       {/* Details Image */}
       <div className="w-full max-w-4xl mx-auto mb-16 rounded-2xl overflow-hidden shadow-xl border border-white/20">
         <img
-          src="/src/assets/images/details.png"
+          src={detailsImg}
           alt="Event Details"
           className="w-full h-auto object-cover"
         />
@@ -44,7 +46,7 @@ const EventDetailsSection = () => {
       {/* Dress Code Image */}
       <div className="w-full max-w-md mx-auto py-8">
         <img
-          src="/src/assets/images/dress.png"
+          src={dressImg}
           alt="Traditional Attire"
           className="w-full h-auto object-contain"
         />

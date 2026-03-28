@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { MapPin, Navigation } from 'lucide-react';
+import hotelImg from '@/assets/images/hotel.png';
 
 const VenueSection = () => {
   const { t, lang } = useLanguage();
@@ -32,7 +33,7 @@ const VenueSection = () => {
       {/* Main Venue Image */}
       <div className="w-full max-w-2xl rounded-2xl overflow-hidden shadow-xl border border-white/20 mb-8 relative">
         <img
-          src="/src/assets/images/hotel.png"
+          src={hotelImg}
           alt="Hotel Barahi, Pokhara"
           className="w-full aspect-[16/9] object-cover"
         />
