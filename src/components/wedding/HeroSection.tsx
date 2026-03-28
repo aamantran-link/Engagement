@@ -32,7 +32,7 @@ const HeroSection = () => {
       >
 
         <p className={`text-wedding-gold/80 text-sm tracking-[0.2em] uppercase mb-6 font-body max-w-lg mx-auto leading-relaxed ${lang === 'ne' ? 'font-nepali tracking-normal' : ''}`}>
-          {t('You are heartily invited to join us in celebrating the engagement of Sugal & Anshu.', 'हामी सुगल र अंशुको इन्गेजमेन्ट समारोहमा तपाईंलाई हार्दिक निमन्त्रणा गर्दछौं।')}
+          {t('You are heartily invited to join us in celebrating the engagement of', 'हामी सुगल र अंशुको इन्गेजमेन्ट समारोहमा तपाईंलाई हार्दिक निमन्त्रणा गर्दछौं।')}
         </p>
 
         <h1 className="font-display text-5xl sm:text-7xl md:text-8xl text-primary-foreground mb-2 leading-tight">
