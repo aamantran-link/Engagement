@@ -25,28 +25,28 @@ const CountdownSection = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center bg-wedding-cream py-12 px-6">
+    <section className="flex flex-col items-center justify-center bg-background py-12 px-6">
       <div className="flex items-center gap-3 mb-4">
-        <div className="h-px w-12 bg-wedding-gold/40" />
-        <span className="text-wedding-gold">✦</span>
-        <div className="h-px w-12 bg-wedding-gold/40" />
+        <div className="h-px w-12 bg-primary/40" />
+        <span className="text-primary">✦</span>
+        <div className="h-px w-12 bg-primary/40" />
       </div>
 
-      <h2 className={`font-display text-3xl sm:text-4xl text-white mb-2 text-center ${lang === 'ne' ? 'font-nepali' : ''}`}>
+      <h2 className={`font-display text-3xl sm:text-4xl text-foreground mb-2 text-center ${lang === 'ne' ? 'font-nepali' : ''}`}>
         {t('Counting Down', 'उल्टी गिन्ती')}
       </h2>
 
-      <p className={`text-center text-white/80 font-body text-lg mb-8 ${lang === 'ne' ? 'font-nepali' : ''}`}>
+      <p className={`text-center text-muted-foreground font-body text-lg mb-8 ${lang === 'ne' ? 'font-nepali' : ''}`}>
         {t('To our special day', 'हाम्रो विशेष दिनको')}
       </p>
 
       <div className="flex gap-4 sm:gap-6 justify-center">
         {units.map(({ value, label }) => (
           <div key={label} className="text-center">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center mb-2 shadow-sm">
-              <span className="font-display text-2xl sm:text-3xl text-white font-bold">{value}</span>
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mb-2 shadow-sm">
+              <span className="font-display text-2xl sm:text-3xl text-foreground font-bold">{value}</span>
             </div>
-            <span className="text-xs sm:text-sm text-white/90 font-body">{label}</span>
+            <span className="text-xs sm:text-sm text-muted-foreground font-body">{label}</span>
           </div>
         ))}
       </div>

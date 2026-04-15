@@ -10,7 +10,7 @@ const EnvelopeLanding = ({ onOpen }: { onOpen: () => void }) => {
     const video = videoRef.current;
     if (!video) return;
     setIsPlaying(true);
-    video.play().catch(() => {});
+    video.play().catch(() => { });
   };
 
   const handleVideoEnd = () => {
@@ -27,7 +27,7 @@ const EnvelopeLanding = ({ onOpen }: { onOpen: () => void }) => {
 
   if (isFading) {
     return (
-      <div className="fixed inset-0 z-50 bg-white animate-fade-in" />
+      <div className="fixed inset-0 z-50 bg-background animate-fade-in" />
     );
   }
 
@@ -58,7 +58,7 @@ const EnvelopeLanding = ({ onOpen }: { onOpen: () => void }) => {
 
       {/* Tap hint */}
       {!isPlaying && (
-        <p className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 text-wedding-gold/80 font-body text-lg tracking-widest animate-pulse">
+        <p className="absolute bottom-16 left-1/2 -translate-x-1/2 z-10 text-primary font-body text-lg tracking-widest animate-pulse">
           Tap to Open
         </p>
       )}
@@ -67,7 +67,7 @@ const EnvelopeLanding = ({ onOpen }: { onOpen: () => void }) => {
       {isPlaying && (
         <button
           onClick={triggerFade}
-          className="absolute bottom-8 right-8 z-10 px-5 py-2 rounded-full bg-black/40 backdrop-blur text-white/80 text-sm font-body tracking-wider hover:bg-black/60 transition-colors"
+          className="absolute bottom-8 right-8 z-10 px-5 py-2 rounded-full bg-black/40 backdrop-blur text-primary-foreground text-sm font-body tracking-wider hover:bg-black/60 transition-colors"
         >
           Skip →
         </button>

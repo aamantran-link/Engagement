@@ -26,11 +26,9 @@ const ScratchCircle = ({ text, size, onRevealed }: ScratchCircleProps) => {
 
     // Radial white/pearl gradient for an elegant look
     const grad = ctx.createRadialGradient(size / 2, size / 2, 0, size / 2, size / 2, size / 2);
-    grad.addColorStop(0, '#FFFFFF');
-    grad.addColorStop(0.3, '#F8F9FA');
-    grad.addColorStop(0.6, '#E9ECEF');
-    grad.addColorStop(0.8, '#F8F9FA');
-    grad.addColorStop(1, '#DEE2E6');
+    grad.addColorStop(0, '#728156'); // Accent color
+    grad.addColorStop(0.5, '#8EA16D');
+    grad.addColorStop(1, '#65734A');
 
     ctx.beginPath();
     ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
@@ -44,7 +42,7 @@ const ScratchCircle = ({ text, size, onRevealed }: ScratchCircleProps) => {
       ctx.beginPath();
       ctx.moveTo(size / 2, size / 2);
       ctx.lineTo(size / 2 + Math.cos(angle) * size / 2, size / 2 + Math.sin(angle) * size / 2);
-      ctx.strokeStyle = '#FFF';
+      ctx.strokeStyle = 'rgba(248, 246, 242, 0.3)'; // Theme background color with opacity
       ctx.lineWidth = 0.5;
       ctx.stroke();
     }
@@ -53,7 +51,7 @@ const ScratchCircle = ({ text, size, onRevealed }: ScratchCircleProps) => {
     // Subtle border highlight
     ctx.beginPath();
     ctx.arc(size / 2, size / 2, size / 2 - 1, 0, Math.PI * 2);
-    ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+    ctx.strokeStyle = 'rgba(248, 246, 242, 0.2)';
     ctx.lineWidth = 2;
     ctx.stroke();
   }, [size]);
@@ -119,10 +117,10 @@ const ScratchCircle = ({ text, size, onRevealed }: ScratchCircleProps) => {
   return (
     <div className="relative flex items-center justify-center" style={{ width: displaySize, height: displaySize }}>
       {/* Revealed text underneath */}
-      <div className={`absolute inset-0 rounded-full flex items-center justify-center bg-white shadow-inner transition-all duration-500 ${revealed ? 'scale-100 opacity-100' : 'scale-95 opacity-80'}`}
-        style={{ boxShadow: 'inset 0 2px 8px rgba(0,0,0,0.06), 0 0 0 4px rgba(255,255,255,0.2)' }}
+      <div className={`absolute inset-0 rounded-full flex items-center justify-center bg-background shadow-inner transition-all duration-500 ${revealed ? 'scale-100 opacity-100' : 'scale-95 opacity-80'}`}
+        style={{ boxShadow: 'inset 0 2px 8px rgba(0,0,0,0.06), 0 0 0 4px rgba(0,0,0,0.05)' }}
       >
-        <span className="font-display text-4xl sm:text-6xl text-[#2F381D] font-bold">{text}</span>
+        <span className="font-display text-4xl sm:text-6xl text-foreground font-bold">{text}</span>
       </div>
 
       {/* Canvas overlay */}
@@ -149,10 +147,10 @@ const FallingLeaves = () => {
   const leaves = Array.from({ length: 30 }).map((_, i) => {
     // Various shades of white/off-white for flowers/petals
     const colors = [
-      'rgba(255, 255, 255, 0.95)',
-      'rgba(248, 249, 250, 0.85)',
-      'rgba(241, 243, 245, 0.9)',
-      'rgba(233, 236, 239, 0.8)',
+      'rgba(114, 129, 86, 0.4)',  // Muted accent
+      'rgba(114, 129, 86, 0.2)',
+      'rgba(0, 0, 0, 0.05)',       // Very light gray
+      'rgba(109, 109, 109, 0.1)', // Secondary text color with opacity
     ];
     return {
       id: i,
@@ -179,7 +177,7 @@ const FallingLeaves = () => {
             backgroundColor: l.color,
             borderRadius: '50% 0 50% 50%', // Flower petal shape
             transform: `rotate(${Math.random() * 360}deg)`,
-            boxShadow: '0 0 6px rgba(255,255,255,0.4)',
+            boxShadow: '0 0 6px rgba(44, 44, 44, 0.1)',
           }}
         />
       ))}
@@ -216,20 +214,20 @@ const ScratchDateSection = ({ onAllRevealed }: ScratchDateSectionProps) => {
       {showLeaves && <FallingLeaves />}
       <section className="relative flex flex-col items-center justify-center bg-transparent py-12 px-6">
         {/* Hand icon */}
-        <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center mb-4 border border-white/20">
-          <Hand size={24} className="text-white/80" />
+        <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-4 border border-primary/20">
+          <Hand size={24} className="text-primary/80" />
         </div>
 
-        <p className={`text-white/80 text-sm font-body tracking-wide mb-8 ${lang === 'ne' ? 'font-nepali' : ''}`}>
+        <p className={`text-muted-foreground text-sm font-body tracking-wide mb-8 ${lang === 'ne' ? 'font-nepali' : ''}`}>
           {t('Scratch all three circles to continue', 'तीनवटै सर्कल खुर्कनुहोस्')}
         </p>
 
         {/* "Reveal" heading */}
-        <h2 className="font-display text-5xl sm:text-7xl text-white mb-3 italic transition-transform hover:scale-105 duration-300">
+        <h2 className="font-display text-5xl sm:text-7xl text-foreground mb-3 italic transition-transform hover:scale-105 duration-300">
           {t('Reveal', 'खुलासा')}
         </h2>
 
-        <p className={`text-white/90 text-sm sm:text-base tracking-[0.25em] uppercase font-body mb-12 ${lang === 'ne' ? 'font-nepali tracking-normal' : ''}`}>
+        <p className={`text-muted-foreground text-sm sm:text-base tracking-[0.25em] uppercase font-body mb-12 ${lang === 'ne' ? 'font-nepali tracking-normal' : ''}`}>
           {t('Scratch to discover the date', 'मिति पत्ता लगाउन खुर्कनुहोस्')}
         </p>
 
@@ -242,10 +240,10 @@ const ScratchDateSection = ({ onAllRevealed }: ScratchDateSectionProps) => {
 
         {/* Message after reveal */}
         <div className={`mt-12 flex flex-col items-center transition-all duration-700 ${allRevealed ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}>
-          <p className={`font-body text-xl sm:text-2xl text-white/90 mb-3 tracking-wide ${lang === 'ne' ? 'font-nepali' : ''}`}>
+          <p className={`font-body text-xl sm:text-2xl text-foreground/90 mb-3 tracking-wide ${lang === 'ne' ? 'font-nepali' : ''}`}>
             {t('Baisakh 7, 2083 BS', 'बैशाख ७, २०८३')}
           </p>
-          <p className={`font-display text-3xl sm:text-4xl text-white italic text-center drop-shadow-sm ${lang === 'ne' ? 'font-nepali' : ''}`}>
+          <p className={`font-display text-3xl sm:text-4xl text-primary italic text-center drop-shadow-sm ${lang === 'ne' ? 'font-nepali' : ''}`}>
             {t("The big day is finally here.", 'ठूलो दिन अन्ततः आइपुगेको छ।')}
           </p>
         </div>

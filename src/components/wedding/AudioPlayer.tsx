@@ -48,7 +48,7 @@ const AudioPlayer: React.FC<AudioPlayerProps> = ({ shouldPlay }) => {
             />
             <button
                 onClick={toggleMute}
-                className="fixed bottom-6 right-6 z-50 p-3 bg-white/20 backdrop-blur-md border border-white/30 rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.1)] transition-all hover:bg-white/30 text-white cursor-pointer"
+                className="fixed bottom-6 right-6 z-50 p-3 bg-primary/20 backdrop-blur-md border border-primary/30 rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.1)] transition-all hover:bg-primary/30 text-primary cursor-pointer"
                 aria-label="Toggle background music"
             >
                 {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}

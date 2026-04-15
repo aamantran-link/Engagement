@@ -6,50 +6,50 @@
 
 @layer base {
   :root {
-    --background: 65 40% 53%;
-    --foreground: 0 0% 100%;
+    --background: 40 24% 96%;
+    --foreground: 0 0% 17%;
 
-    --card: 65 35% 50%;
-    --card-foreground: 0 0% 100%;
+    --card: 40 24% 96%;
+    --card-foreground: 0 0% 17%;
 
-    --popover: 65 35% 50%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 40 24% 96%;
+    --popover-foreground: 0 0% 17%;
 
-    --primary: 65 30% 45%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 82 20% 42%;
+    --primary-foreground: 40 24% 96%;
 
-    --secondary: 65 20% 65%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 0 0% 43%;
+    --secondary-foreground: 40 24% 96%;
 
-    --muted: 65 20% 65%;
-    --muted-foreground: 0 0% 95%;
+    --muted: 0 0% 90%;
+    --muted-foreground: 0 0% 43%;
 
-    --accent: 65 40% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 82 20% 42%;
+    --accent-foreground: 40 24% 96%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 65 20% 65%;
-    --input: 65 20% 65%;
-    --ring: 65 30% 70%;
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 82 20% 42%;
 
     --radius: 0.5rem;
 
-    --wedding-maroon: 65 40% 48%;
-    --wedding-gold: 0 0% 100%;
-    --wedding-cream: 65 40% 53%;
-    --wedding-saffron: 65 50% 60%;
-    --wedding-dark-maroon: 65 40% 40%;
+    --wedding-maroon: 82 20% 42%;
+    --wedding-gold: 82 20% 42%;
+    --wedding-cream: 40 24% 96%;
+    --wedding-saffron: 82 30% 50%;
+    --wedding-dark-maroon: 82 20% 30%;
 
-    --sidebar-background: 65 40% 53%;
-    --sidebar-foreground: 0 0% 100%;
-    --sidebar-primary: 65 30% 45%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 65 20% 65%;
-    --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 65 20% 65%;
-    --sidebar-ring: 65 30% 70%;
+    --sidebar-background: 40 24% 96%;
+    --sidebar-foreground: 0 0% 17%;
+    --sidebar-primary: 82 20% 42%;
+    --sidebar-primary-foreground: 40 24% 96%;
+    --sidebar-accent: 0 0% 90%;
+    --sidebar-accent-foreground: 0 0% 17%;
+    --sidebar-border: 0 0% 85%;
+    --sidebar-ring: 82 20% 42%;
   }
 }
 

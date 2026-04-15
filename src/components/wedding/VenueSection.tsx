@@ -9,29 +9,29 @@ const VenueSection = () => {
   return (
     <section className="flex flex-col items-center justify-center bg-transparent py-12 px-6">
       <div className="flex items-center gap-3 mb-6">
-        <div className="h-px w-12 bg-white/40" />
-        <span className="text-white">✦</span>
-        <div className="h-px w-12 bg-white/40" />
+        <div className="h-px w-12 bg-primary/40" />
+        <span className="text-foreground">✦</span>
+        <div className="h-px w-12 bg-primary/40" />
       </div>
 
-      <h2 className={`font-display text-3xl sm:text-4xl text-white mb-4 text-center drop-shadow-sm ${lang === 'ne' ? 'font-nepali' : ''}`}>
+      <h2 className={`font-display text-3xl sm:text-4xl text-foreground mb-4 text-center drop-shadow-sm ${lang === 'ne' ? 'font-nepali' : ''}`}>
         {t('Venue', 'स्थान')}
       </h2>
 
-      <div className="flex items-center gap-2 text-white mb-8 bg-white/10 px-6 py-3 rounded-full backdrop-blur-sm border border-white/20 shadow-lg">
-        <MapPin size={24} className="text-white drop-shadow-md" />
+      <div className="flex items-center gap-2 text-foreground mb-8 bg-primary/10 px-6 py-3 rounded-full backdrop-blur-sm border border-primary/20 shadow-lg">
+        <MapPin size={24} className="text-primary drop-shadow-md" />
         <div className="flex flex-col items-center">
           <span className={`font-body text-xl sm:text-2xl font-bold tracking-wide drop-shadow-md ${lang === 'ne' ? 'font-nepali' : ''}`}>
             {t('Hotel Barahi, Pokhara', 'होटल बाराही, पोखरा')}
           </span>
-          <span className={`font-body text-sm text-white/70 mt-1 uppercase tracking-wider ${lang === 'ne' ? 'font-nepali tracking-normal' : ''}`}>
+          <span className={`font-body text-sm text-muted-foreground mt-1 uppercase tracking-wider ${lang === 'ne' ? 'font-nepali tracking-normal' : ''}`}>
             {t('Lakeside, Ward No. 6, Pokhara', 'लेकसाइड, वडा नं. ६, पोखरा')}
           </span>
         </div>
       </div>
 
       {/* Main Venue Image */}
-      <div className="w-full max-w-2xl rounded-2xl overflow-hidden shadow-xl border border-white/20 mb-8 relative">
+      <div className="w-full max-w-2xl rounded-2xl overflow-hidden shadow-xl border border-primary/20 mb-8 relative">
         <img
           src={hotelImg}
           alt="Hotel Barahi, Pokhara"
@@ -41,7 +41,7 @@ const VenueSection = () => {
 
 
       {/* Map */}
-      <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-white/20 mb-8 relative z-10 bg-white/5 backdrop-blur-sm p-1.5">
+      <div className="w-full max-w-md rounded-2xl overflow-hidden shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-primary/20 mb-8 relative z-10 bg-primary/5 backdrop-blur-sm p-1.5">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.688846399434!2d83.95777717462445!3d28.216723202901308!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3995951d3886cdab%3A0xe549cd88aeb78297!2sHotel%20Barahi%20Pokhara!5e0!3m2!1sen!2snp!4v1700000000000"
           width="100%"
@@ -58,7 +58,7 @@ const VenueSection = () => {
         href="https://maps.google.com/?q=Hotel+Barahi+Pokhara"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-[#565C30] font-body text-sm tracking-wider hover:bg-white/90 transition-colors shadow-lg"
+        className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-primary-foreground font-body text-sm tracking-wider hover:bg-primary/90 transition-colors shadow-lg"
       >
         <Navigation size={16} />
         {t('Get Directions', 'दिशा प्राप्त गर्नुहोस्')}

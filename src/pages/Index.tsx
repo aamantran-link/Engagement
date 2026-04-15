@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { LanguageProvider } from '@/contexts/LanguageContext';
-import EnvelopeLanding from '@/components/wedding/EnvelopeLanding';
 import HeroSection from '@/components/wedding/HeroSection';
 import ScratchDateSection from '@/components/wedding/ScratchDateSection';
 import CountdownSection from '@/components/wedding/CountdownSection';
@@ -10,7 +9,7 @@ import BlessingSection from '@/components/wedding/BlessingSection';
 import AudioPlayer from '@/components/wedding/AudioPlayer';
 
 const Index = () => {
-  const [envelopeOpened, setEnvelopeOpened] = useState(false);
+  const [envelopeOpened, setEnvelopeOpened] = useState(true);
   const [dateRevealed, setDateRevealed] = useState(false);
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -37,7 +36,6 @@ const Index = () => {
   return (
     <LanguageProvider>
       <AudioPlayer shouldPlay={envelopeOpened} />
-      {!envelopeOpened && <EnvelopeLanding onOpen={() => setEnvelopeOpened(true)} />}
 
       <div
         ref={contentRef}
